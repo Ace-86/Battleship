@@ -1,0 +1,22 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ace-86/Battleship.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ace-86/Battleship/issues"
+  },
+  "homepage": "https://github.com/Ace-86/Battleship#readme",
+  "devDependencies": {
+    "jest": "^29.4.1"
+  }
+}
