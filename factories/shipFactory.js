@@ -1,31 +1,38 @@
-const shipType = (name, length) => {
-    const health = length;
-    const type  = name;
+//constructor for ship pieces
 
-  const hit = () => {
-//Ships should have a hit() function that 
-//increases the number of ‘hits’ in your ship.
-//when enemy attacks and hit, increase hit damage on ship 
-//by 1
-  }  
-
-
-
-  const ifSunk = () => {
-    if (health == 0) {
-    //for each hit accumulated, decrease health by 1
-    //when health reaches zero, "you sunk my battle ship"
-    //ship is destroyed
-    } else {
-
-    }
-    }
-
-return {health, type}
+function ship(length) {
+  return {
+    length: length,
+    hit: 0,
+    sunk: false,
+    orientation: 'v',
+    position: [],
+    hits: []
+  }
 }
 
+const ship_pieces = {
+  p1: {
+    carrier: ship(5),
+    battleship: ship(4),
+    cruiser: ship(3),
+    submarine: ship(3),
+    destroyer: ship(2)
+  },
 
-module.exports = {shipType}
+  p2: {
+    carrier: ship(5),
+    battleship: ship(4),
+    cruiser: ship(3),
+    submarine: ship(3),
+    destroyer: ship(2)
+  }
+
+  
+}
+
+export default ship_pieces;
+// module.exports = {shipType}
 
 //isSunk() should be a function that calculates it based on 
 //their length and the number of ‘hits’.
