@@ -1,6 +1,7 @@
 
 const ship = require("../factories/shipFactory");
-
+describe("Ship's Desription", () => {
 test('check health', () => {
-    expect(ship.getHealth(Carrier, 5)).toMatch(5);
+    expect(ship.shipType("ted", 5)).toEqual({"health": 5, "type": "ted"});
   });
+})
