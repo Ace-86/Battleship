@@ -1,10 +1,15 @@
 const shipType = (name, length) => {
     const health = length;
-    const shipName  = name;
+    const type  = name;
 
-return {health, shipName}
+return {health, type}
 }
-console.log(shipType("Carrier", 5));
+
+// const cruiser = shipType("cruiser", 3);
+
+// console.log(cruiser);
+module.exports = {shipType}
+
 
 //rules for battleshoip
 //Pieces: Carrier (5), Battleship (4), Cruiser (3), submarine(3),
