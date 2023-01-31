@@ -3,13 +3,10 @@
 function ship(length) {
   return {
     length: length,
-    hit: 0,
+    hits: 0,
     sunk: false,
-    orientation: 'v',
-    position: [],
-    hits: []
+
   }
-}
 
 const ship_pieces = {
   p1: {
@@ -27,9 +24,19 @@ const ship_pieces = {
     submarine: ship(3),
     destroyer: ship(2)
   }
-
-  
 }
+  function hit() {
+    this.hits++;
+    if (this.hits === this.length) {
+      this.sunk = true;
+    }
+  }
+  
+  function isSunk() {
+    return this.sunk;
+  }
+}
+
 
 export default ship_pieces;
 // module.exports = {shipType}
