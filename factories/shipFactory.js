@@ -36,10 +36,10 @@ const ship_pieces = {
     return this.sunk;
   }
 }
+console.log(ship(5))
 
-
-export default ship_pieces;
-// module.exports = {shipType}
+// export default ship, ship_pieces;
+module.exports = {ship}
 
 //isSunk() should be a function that calculates it based on 
 //their length and the number of ‘hits’.
