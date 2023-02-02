@@ -1,5 +1,5 @@
-let myGridSize = 5
-let enemyGridSize = 5
+let myGridSize = 3
+let enemyGridSize = 3
 let myGrid = createGrid(myGridSize);
 let enemyGrid = createGrid(enemyGridSize)
 
@@ -97,7 +97,7 @@ function getRandomInt(max) {
 
 function attack(x, y, grid) {
     if ( grid[y][x] == 'O') {
-        grid[y][x] == '!';
+        grid[y][x] = '!';
         return true;
         // attack function returns a boolean
     } else if (grid[y][x] == '-') {
