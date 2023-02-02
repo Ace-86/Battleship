@@ -136,6 +136,7 @@ function attack(x, y, grid) {
     }
 }
 
+// visual break after each board change instance
 function drawbreak() {
     console.log('------------------------------------')
 }
