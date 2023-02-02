@@ -3,8 +3,24 @@ let enemyGridSize = 5
 let myGrid = createGrid(myGridSize);
 let enemyGrid = createGrid(enemyGridSize)
 
+//gameplay variables
+let myShips = 5;
+let enemyShips = 5;
+
+
+// printGrid(enemyGrid, true)
+// printGrid(myGrid)
+
+//gameplay
+for (let i = 1; i < 6; i++) {
+    let x = prompt('enter y coordinate for your ship number' + i);
+    let y = prompt('enter x coordinate for your ship number' + i);
+    placeCharacter(x, y, 'O', myGrid);
+}
+
 printGrid(enemyGrid, true)
 printGrid(myGrid)
+
 // use an array of an array for board creation
 
 function createGrid(size) {
@@ -50,3 +66,6 @@ function createHeaders(size) {
 //     return result;
 // }
 
+function placeCharacter( x, y, c, grid) {
+    grid[y][x] = c;
+}
