@@ -25,12 +25,27 @@ while (enemyShips > 0 && myShips > 0) {
     //game will place as long as enemy and my ships are greater than 0; 
     let x = prompt('Enter the x coordinate for your attack'); //local variables
     let y = prompt('Enter the y coordinate for your attack'); //local variables
-
+//enemy attack turn
         if(attack(x, y, enemyGrid)) {
             enemyShips--;
         } 
-        printGrid(enemyGrid, true)
-        printGrid(myGrid)
+        x = getRandomInt(myGridSize);
+        y = getRandomInt(myGridSize);
+        if (enemyShips > 0 && attack(x, y, myGridSize)) {
+            myShips--;
+        }
+        
+        drawbreak();        
+        printGrid(enemyGrid, true);
+        printGrid(myGrid);
+}
+
+
+//Determines winner, prints win or lose
+if (myShips < enemyShips) {
+    console.log('Lose')
+} else {
+    console.log('victory')
 }
 // use an array of an array for board creation
 
@@ -107,4 +122,8 @@ function attack(x, y, grid) {
     }else {
         return false//no new ship has been hit
     }
+}
+
+function drawbreak() {
+    console.log('------------------------------------')
 }
