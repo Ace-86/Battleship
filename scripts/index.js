@@ -31,7 +31,7 @@ while (enemyShips > 0 && myShips > 0) {
         } 
         x = getRandomInt(myGridSize);
         y = getRandomInt(myGridSize);
-        if (enemyShips > 0 && attack(x, y, myGridSize)) {
+        if (enemyShips > 0 && attack(x, y, myGrid)) {
             myShips--;
         }
         
