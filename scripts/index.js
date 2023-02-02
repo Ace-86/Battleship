@@ -4,15 +4,15 @@ let myGrid = createGrid(myGridSize);
 let enemyGrid = createGrid(enemyGridSize)
 
 //gameplay variables
-let myShips = 5;
-let enemyShips = 5;
+let myShips = 2;
+let enemyShips = 2;
 let enemyLocation = {}
 
 // printGrid(enemyGrid, true)
 // printGrid(myGrid)
 
 //gameplay
-for (let i = 1; i < 6; i++) {
+for (let i = 1; i < 5; i++) {
     let x = prompt('enter y coordinate for your ship number' + i);
     let y = prompt('enter x coordinate for your ship number' + i);
     placeCharacter(x, y, 'O', myGrid);
@@ -50,6 +50,16 @@ function printGrid(grid, isEnemy = false) {
     }
 }
 
+while (enemyShips > 0 && myShips > 0) {
+    //game will place as long as enemy and my ships are greater than 0; 
+    let x = prompt('Enter the x coordinate for your attack'); //local variables
+    let y = prompt('Enter the y coordinate for your attack'); //local variables
+
+        if(attack(x, y, enemyGrid)) {
+            enemyShips--;
+        } 
+}
+
 function createHeaders(size) {
     let result = "  ";
     for (let i = 0; i < size; i++) {
@@ -64,12 +74,12 @@ function placeCharacter( x, y, c, grid) {
     grid[y][x] = c;
 }
 
-function palceRandomCharacter(c , grid, max) {
+function placeRandomCharacter(c , grid, max) {
     //dont place ship in same location
     let didPlace = false;
     while(!didPlace) {
         let x = getRandomInt(max);
-        let y = getRandomInt(min)
+        let y = getRandomInt(max)
         if (!enemyLocation[`${x}-${y}`]) {
         placeCharacter(x, y, c, grid);
         didPlace = true;
@@ -83,3 +93,16 @@ function getRandomInt(max) {
 }
 
 
+function attack(x, y, grid) {
+    if ( grid[y][x] == 'O') {
+        grid[y][x] == '!';
+        return true;
+        // attack function returns a boolean
+    } else if (grid[y][x] == '-') {
+        grid[y][x] = 'x';
+        return false;
+        //no hit; missed attack
+    }else {
+        return false//no new ship has been hit
+    }
+}
