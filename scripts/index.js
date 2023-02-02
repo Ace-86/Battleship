@@ -12,7 +12,7 @@ let enemyLocation = {}
 // printGrid(myGrid)
 
 //gameplay
-for (let i = 1; i < 5; i++) {
+for (let i = 1; i < 3; i++) {
     let x = prompt('enter y coordinate for your ship number' + i);
     let y = prompt('enter x coordinate for your ship number' + i);
     placeCharacter(x, y, 'O', myGrid);
@@ -21,6 +21,17 @@ for (let i = 1; i < 5; i++) {
     printGrid(myGrid)
 }
 
+while (enemyShips > 0 && myShips > 0) {
+    //game will place as long as enemy and my ships are greater than 0; 
+    let x = prompt('Enter the x coordinate for your attack'); //local variables
+    let y = prompt('Enter the y coordinate for your attack'); //local variables
+
+        if(attack(x, y, enemyGrid)) {
+            enemyShips--;
+        } 
+        printGrid(enemyGrid, true)
+        printGrid(myGrid)
+}
 // use an array of an array for board creation
 
 function createGrid(size) {
@@ -50,15 +61,6 @@ function printGrid(grid, isEnemy = false) {
     }
 }
 
-while (enemyShips > 0 && myShips > 0) {
-    //game will place as long as enemy and my ships are greater than 0; 
-    let x = prompt('Enter the x coordinate for your attack'); //local variables
-    let y = prompt('Enter the y coordinate for your attack'); //local variables
-
-        if(attack(x, y, enemyGrid)) {
-            enemyShips--;
-        } 
-}
 
 function createHeaders(size) {
     let result = "  ";
