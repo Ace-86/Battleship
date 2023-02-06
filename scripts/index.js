@@ -3,6 +3,7 @@ import { printGrid } from './gameboard.js'
 import { placeCharacter } from './player.js';
 import { placeRandomCharacter, getRandomInt } from './enemy.js'
 import { attack } from './attack.js'
+import { drawbreak } from './seperator.js'
 
 // //gameplay variables
 let myShips = 2;
@@ -44,11 +45,6 @@ if (myShips < enemyShips) {
     console.log('Lose')
 } else {
     console.log('victory')
-}
-
-// visual break after each board change instance
-function drawbreak() {
-    console.log('------------------------------------')
 }
 
 export {placeCharacter}
