@@ -1,5 +1,6 @@
 import {myGridSize, myGrid, enemyGridSize, enemyGrid } from './variables.js';
 import { printGrid } from './gameboard.js'
+import { placeCharacter } from './player.js';
 import {placeRandomCharacter, getRandomInt} from './enemy.js'
 
 
@@ -48,11 +49,6 @@ if (myShips < enemyShips) {
     console.log('Lose')
 } else {
     console.log('victory')
-}
-
-// // place ship (GAMEPLAY)
-function placeCharacter( x, y, c, grid) {
-    grid[y][x] = c;
 }
 
 // attack function for player 1
