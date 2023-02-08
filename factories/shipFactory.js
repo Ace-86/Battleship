@@ -40,12 +40,3 @@ console.log(ship(5))
 
 // export default ship, ship_pieces;
 module.exports = {ship}
-
-//isSunk() should be a function that calculates it based on 
-//their length and the number of ‘hits’.
-
-
-//rules for battleshoip
-//Pieces: Carrier (5), Battleship (4), Cruiser (3), submarine(3),
-//Destroyer (2),
-//  can only be placed vertically or horizontally
